@@ -25,7 +25,8 @@ public class SimpleJsonDigestNoLimitClient {
     }
 
     public String send(String algorithm, String objectKey, int timeoutInSec) throws IOException {
-        StringBuilder response = new StringBuilder();
+        String request = String.format(REQUEST_TEMPLATE, algorithm, objectKey).toString();
+        System.out.println(request);
         HttpURLConnection con = (HttpURLConnection) new URL(url).openConnection();
         int timeoutInMs = timeoutInSec * 1000;
         con.setConnectTimeout(timeoutInMs);
@@ -34,8 +35,8 @@ public class SimpleJsonDigestNoLimitClient {
         con.setRequestMethod("POST");
         con.addRequestProperty("Content-Type", "application/json");
         con.addRequestProperty("Accept", "text/html; q=.2, */*; q=.2");
-        String request = String.format(REQUEST_TEMPLATE, algorithm, objectKey).toString();
         con.setDoOutput(true);
+        StringBuilder response = new StringBuilder();
         try (OutputStream os = con.getOutputStream()) {
             os.write(request.getBytes(StandardCharsets.UTF_8));
             try (InputStream is = con.getInputStream()) {

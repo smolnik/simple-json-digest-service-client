@@ -1,0 +1,5 @@
+{"algorithm":"SHA-256","objectKey":"largefiles/file_sizedOf100000000","id":"9dcf049c-58eb-40af-9c81-036fbdede3fa"}
+
+{"algorithm":"SHA-256","objectKey":"largefiles/file_sizedOf200000000","id":"9dcf049c-58eb-40af-9c81-036fbdede3fa"}
+
+{"algorithm":"SHA-256","objectKey":"largefiles/file_sizedOf400000000","id":"9dcf049c-58eb-40af-9c81-036fbdede3fa"}
